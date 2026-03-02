@@ -8,7 +8,8 @@ public class PhotoManager : MonoBehaviour
     [Header("Configurações da Câmera")]
     public int maxPhotos = 1;       
     public PlayerController player; 
-    public Camera previewCamera; // Arraste a sua nova câmera filha do player aqui
+    public Camera previewCamera;
+    public float viewfinderDistance = 3f;
 
     [Header("Interface (UI)")]
     public RawImage photoUIElement; 
@@ -36,26 +37,36 @@ public class PhotoManager : MonoBehaviour
 
     void Update()
     {
-        // 1. Segurar o botão esquerdo para ligar o Visor (se não tiver foto tirada)
-        if (Input.GetMouseButtonDown(0) && activePhotos.Count == 0)
-        {
-            StartAiming();
-        }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            StopAiming();
-        }
-
-        // 2. O clique direito apaga (se tiver foto) ou bate a foto (se estiver mirando)
+        // 1. O DESCARTAR (Botão Direito)
+        // Se clicar com o direito e tiver foto na tela, apaga.
         if (Input.GetMouseButtonDown(1))
         {
             if (activePhotos.Count > 0)
             {
                 ClearAllPhotos();
             }
-            else if (isAiming)
+        }
+
+        // 2. A MIRA E A FOTO (Botão Esquerdo)
+        // Só permitimos usar a câmera se a tela estiver livre (sem foto ativa)
+        if (activePhotos.Count == 0)
+        {
+            // Apertou o esquerdo: Liga a câmera
+            if (Input.GetMouseButtonDown(0))
             {
-                StartCoroutine(TakePhotoCoroutine()); // Avisa que vai esperar o frame acabar
+                StartAiming();
+            }
+
+            // Enquanto estiver segurando o esquerdo: a câmera segue o mouse
+            if (Input.GetMouseButton(0) && isAiming)
+            {
+                MoveViewfinder(); 
+            }
+
+            // Soltou o botão esquerdo: Tira a foto! (Em vez de chamar StopAiming, agora chama a foto)
+            if (Input.GetMouseButtonUp(0) && isAiming)
+            {
+                StartCoroutine(TakePhotoCoroutine()); 
             }
         }
     }
@@ -195,5 +206,25 @@ public class PhotoManager : MonoBehaviour
             }
         }
         return false;
+    }
+
+    void MoveViewfinder()
+    {
+        // 1. Acha EXATAMENTE onde a pontinha do mouse está no mundo do jogo
+        Vector3 mouseScreenPosition = Input.mousePosition;
+        
+        // Garante que o conversor entenda a profundidade da câmera principal
+        mouseScreenPosition.z = Mathf.Abs(Camera.main.transform.position.z); 
+        
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
+
+        // 2. Trava o eixo Z em -10 para a câmera fotográfica não entrar na terra
+        mouseWorldPosition.z = -10f;
+
+        // 3. A mágica: A câmera teleporta exatamente para a posição do mouse!
+        previewCamera.transform.position = mouseWorldPosition;
+        
+        // 4. Garante que ela não vai dar piruetas, ficando travada no eixo reto
+        previewCamera.transform.rotation = Quaternion.identity; 
     }
 }
