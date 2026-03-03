@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PhotoManager : MonoBehaviour
 {
@@ -123,6 +124,20 @@ public class PhotoManager : MonoBehaviour
         newPhoto.screenshot = frozenImage;
 
         activePhotos.Add(newPhoto);
+
+        GameObject[] keyObjects = GameObject.FindGameObjectsWithTag("KeyObject");
+
+        foreach (GameObject keyObj in keyObjects)
+        {
+            // A nossa função mágica: A foto que acabamos de tirar conseguiu ver a chave?
+            if (IsPhotoSeeing(keyObj.transform.position))
+            {
+                Debug.Log("📸 Capturou o Objeto Chave! Iniciando salto quântico para a próxima fase...");
+                
+                // Pula automaticamente para a próxima cena na fila do Build Settings
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+        }
 
         // 5. Cola a foto congelada na UI
         if (photoUIElement != null)
