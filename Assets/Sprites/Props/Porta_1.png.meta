@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e717d95861ca0ce40acb1144326353f9
+guid: 8dc577b6e2edfaa4488730a1c6e452a0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1845165281222919286
-    second: Porta_1.1_0
+      213: 3820942359722270005
+    second: Porta_1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,27 +122,53 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Porta_1.1_0
+      name: Porta_1_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 6
         y: 0
-        width: 32
-        height: 10
-      alignment: 9
-      pivot: {x: 0.0010787569, y: 1.5902553}
+        width: 10
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6740d231c085b9910800000000000000
-      internalID: 1845165281222919286
+      spriteID: 53d1d7af4d6b60530800000000000000
+      internalID: 3820942359722270005
       vertices: []
       indices: 
       edges: []
@@ -151,7 +177,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0a8826a4f7acba443816080fe8233f27
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Porta_1.1_0: 1845165281222919286
+      Porta_1_0: 3820942359722270005
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
