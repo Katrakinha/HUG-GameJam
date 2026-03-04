@@ -147,7 +147,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1427126834}
   - {fileID: 1924172500}
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: b065a8ccab8f16f40bceb8d3a4dddd68, type: 3}
+  m_Texture: {fileID: 2800000, guid: a62737b1f748ef0448607a7e2fb89277, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -251,18 +251,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Brunno Rossi\n\"TynniBru\"\r\nProducer / Game Designer\n\r\nGabriel Kanthack
-    \r\n \"Katraka\"\nProgramador\r\n\r\nGabriela Laurenti\r\n\"Bibs\"\r\nRuan Narvaes\r\n\"Neno\"\nArtistas\r\n\nKaua  
-    Alvez\r\nRoteirista\r\n\r\n\r\n"
+    \r\n \"Katraka\"\nProgramador\r\n\r\nGabriela Laurenti\r\n\"Bibs\"\n\r\nRuan
+    Narvaes\r\n\"Neno\"\nArtistas\r\n\nKaua   Alvez\r\nRoteirista\r\n\r\n\r\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c83671aafc1ea984699949d2a744c2e6, type: 2}
+  m_sharedMaterial: {fileID: -7032560080523640519, guid: c83671aafc1ea984699949d2a744c2e6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4292011983
-  m_fontColor: {r: 0.8117647, g: 0.90588236, b: 0.8235294, a: 1}
+    rgba: 4287454976
+  m_fontColor: {r: 0, g: 0.37254903, b: 0.5529412, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
-  m_wordSpacing: -17.14
+  m_wordSpacing: 0
   m_lineSpacing: -8.29
   m_lineSpacingMax: 0
   m_paragraphSpacing: 26.11
@@ -504,7 +504,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 144.10486, y: 60.01129}
+  m_AnchoredPosition: {x: 1753.3549, y: 79.51129}
   m_SizeDelta: {x: 216.71509, y: 59.275208}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1427126835
@@ -528,8 +528,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.5372549, g: 0.8000001, b: 0.7960785, a: 1}
-    m_HighlightedColor: {r: 0.8117647, g: 0.90588236, b: 0.8235294, a: 1}
+    m_NormalColor: {r: 0, g: 0.10980393, b: 0.23529413, a: 1}
+    m_HighlightedColor: {r: 0, g: 0.37254903, b: 0.5529412, a: 1}
     m_PressedColor: {r: 0.8117648, g: 0.9058824, b: 0.8235295, a: 1}
     m_SelectedColor: {r: 0.8117647, g: 0.90588236, b: 0.8235294, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -597,8 +597,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Voltar
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c83671aafc1ea984699949d2a744c2e6, type: 2}
+  m_sharedMaterial: {fileID: -7032560080523640519, guid: c83671aafc1ea984699949d2a744c2e6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -622,8 +622,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.1
-  m_fontSizeBase: 33.1
+  m_fontSize: 73.05
+  m_fontSizeBase: 73.05
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -788,8 +788,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00006103531, y: -646}
-  m_SizeDelta: {x: 1058.6675, y: 167.6666}
+  m_AnchoredPosition: {x: 0, y: -750.75}
+  m_SizeDelta: {x: 621.9175, y: 79.1666}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1724540364
 MonoBehaviour:
@@ -811,17 +811,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: JOGO DE VIADO
+  m_text: Luminescencia
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c83671aafc1ea984699949d2a744c2e6, type: 2}
+  m_sharedMaterial: {fileID: -7032560080523640519, guid: c83671aafc1ea984699949d2a744c2e6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4291546249
-  m_fontColor: {r: 0.5372549, g: 0.8, b: 0.79607844, a: 1}
+    rgba: 4282129925
+  m_fontColor: {r: 0.019607844, g: 0.11764706, b: 0.23529412, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -838,8 +838,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 155
-  m_fontSizeBase: 155
+  m_fontSize: 90.4
+  m_fontSizeBase: 90.4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -920,7 +920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc82cdc0b24e0341a27af94fea4650c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 40
+  scrollSpeed: 60
 --- !u!224 &1924172500
 RectTransform:
   m_ObjectHideFlags: 0
@@ -939,8 +939,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0.000061035156, y: 167.25}
+  m_SizeDelta: {x: 1920, y: 1082}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1960912352
 GameObject:
