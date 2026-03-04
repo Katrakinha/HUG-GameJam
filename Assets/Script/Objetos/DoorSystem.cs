@@ -6,29 +6,24 @@ public class DoorSystem : MonoBehaviour
     public Sprite spriteAberta;
     public Sprite spriteFechada;
     public GameObject iconeE;
-    
-    [Tooltip("Colisor que bloqueia a passagem do jogador")]
     public BoxCollider2D colisorFisico; 
 
-    private bool perto = false;
-    private bool aberta = false;
+    private bool perto;
+    private bool aberta;
 
     void Start()
     {
         if (iconeE != null) iconeE.SetActive(false);
-        AtualizarVisualDaPorta(); // Garante que ela comece com o visual e colisão certos
+        AtualizarVisualDaPorta();
     }
 
     void Update()
     {
-        // O jogador ainda pode abrir/fechar na mão se quiser!
         if (perto && Input.GetKeyDown(KeyCode.E))
         {
             ToggleDoor(); 
         }
     }
-
-    // --- AS FUNÇÕES PÚBLICAS PARA O BOTÃO USAR ---
 
     public void AbrirPorta()
     {
@@ -42,9 +37,6 @@ public class DoorSystem : MonoBehaviour
         AtualizarVisualDaPorta();
     }
 
-    // ----------------------------------------------
-
-    // Função interna só para não repetir código
     public void ToggleDoor()
     {
         aberta = !aberta;

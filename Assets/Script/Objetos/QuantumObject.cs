@@ -2,41 +2,30 @@ using UnityEngine;
 
 public class QuantumObject : MonoBehaviour
 {
-    [Header("Conexão")]
+    [Header("Conexões")]
     public PlayerController player; 
     public PhotoManager photoManager;
 
     [Header("Configurações de Salto")]
     public Transform[] possibleLocations; 
     
-    private bool wasObservedLastFrame = false; 
-    
-    // VARIÁVEL NOVA: Guarda a memória de onde ele está agora!
+    private bool wasObservedLastFrame; 
     private int currentIndex = -1; 
 
     void Start()
     {
-        if (player == null)
-        {
-            player = FindFirstObjectByType<PlayerController>(); 
-        }
-        if (photoManager == null)
-        {
-            photoManager = FindFirstObjectByType<PhotoManager>();
-        }
+        if (player == null) player = FindFirstObjectByType<PlayerController>(); 
+        if (photoManager == null) photoManager = FindFirstObjectByType<PhotoManager>();
     }
 
     void Update()
     {
-        // 1. A NOVA CHECAGEM REFINADA: O Objeto manda as suas próprias coordenadas pro player avaliar!
-        bool isSeenByPlayer = player.IsSeeing(transform.position);
-        
-        // 2. A foto está vendo? (Continua igual)
+        bool isSeenByPlayer = player != null && player.IsSeeing(transform.position);
         bool isSeenByPhoto = photoManager != null && photoManager.IsPhotoSeeing(transform.position);
-
+        
         bool isCurrentlyObserved = isSeenByPlayer || isSeenByPhoto;
 
-        if (wasObservedLastFrame == true && isCurrentlyObserved == false)
+        if (wasObservedLastFrame && !isCurrentlyObserved)
         {
             JumpToRandomLocation();
         }
@@ -46,30 +35,26 @@ public class QuantumObject : MonoBehaviour
 
     void JumpToRandomLocation()
     {
-        if (possibleLocations.Length == 0) return;
+        int length = possibleLocations.Length; 
+        
+        if (length == 0) return;
 
-        // Se só tiver 1 ponto no mapa, não tem o que fazer, ele vai ter que pular pra lá mesmo.
-        if (possibleLocations.Length == 1)
+        if (length == 1)
         {
             currentIndex = 0;
             transform.position = possibleLocations[0].position;
             return;
         }
 
-        // --- SISTEMA ANTI-REPETIÇÃO ---
-        int randomIndex = Random.Range(0, possibleLocations.Length);
+        int randomIndex = Random.Range(0, length);
 
-        // Enquanto o número sorteado for IGUAL ao lugar que ele já está, ele sorteia de novo!
         while (randomIndex == currentIndex)
         {
-            randomIndex = Random.Range(0, possibleLocations.Length);
+            randomIndex = Random.Range(0, length);
         }
 
-        // Atualiza a memória para o novo lugar e teleporta
         currentIndex = randomIndex;
         transform.position = possibleLocations[randomIndex].position;
-        
-        Debug.Log("BAM! O Objeto Quântico pulou para um NOVO ponto: " + randomIndex);
     }
 
     private void OnDrawGizmos()

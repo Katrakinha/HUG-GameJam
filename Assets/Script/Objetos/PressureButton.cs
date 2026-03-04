@@ -1,23 +1,21 @@
 using UnityEngine;
-using UnityEngine.Events; // A mágica para conectar coisas no Inspector!
+using UnityEngine.Events;
 
 public class PressureButton : MonoBehaviour
 {
-    [Header("Quem pode apertar?")]
-    // Uma lista para você poder adicionar quantas Tags quiser no futuro
+    [Header("Configurações")]
     public string[] tagsPermitidas = { "Player", "Quantum" }; 
 
-    [Header("O que o botão faz?")]
+    [Header("Eventos")]
     public UnityEvent aoApertar;
     public UnityEvent aoSoltar;
 
-    [Header("Visual do Botão (Opcional)")]
+    [Header("Visual")]
     public SpriteRenderer spriteBotao;
     public Color corApertado = Color.green;
+    
     private Color corOriginal;
-
-    // O nosso contador salva-vidas
-    private int objetosEmCima = 0;
+    private int objetosEmCima;
 
     void Start()
     {
@@ -25,24 +23,21 @@ public class PressureButton : MonoBehaviour
         if (spriteBotao != null) corOriginal = spriteBotao.color;
     }
 
-    // Função rápida para checar se quem pisou tem a carteirinha VIP
-    bool TemTagPermitida(string tagParaChecar)
+    private bool TemTagPermitida(string tagParaChecar)
     {
-        foreach (string tag in tagsPermitidas)
+        for (int i = 0; i < tagsPermitidas.Length; i++)
         {
-            if (tagParaChecar == tag) return true;
+            if (tagParaChecar == tagsPermitidas[i]) return true;
         }
         return false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Se quem pisou tem uma das tags permitidas...
         if (TemTagPermitida(collision.tag))
         {
             objetosEmCima++;
             
-            // Se foi o PRIMEIRO a pisar, a gente afunda o botão e abre a porta!
             if (objetosEmCima == 1) 
             {
                 if (spriteBotao != null) spriteBotao.color = corApertado;
@@ -57,10 +52,9 @@ public class PressureButton : MonoBehaviour
         {
             objetosEmCima--;
             
-            // Se o ÚLTIMO objeto saiu de cima, a gente solta o botão e fecha a porta!
             if (objetosEmCima <= 0) 
             {
-                objetosEmCima = 0; // Prevenção de bugs de física
+                objetosEmCima = 0; 
                 if (spriteBotao != null) spriteBotao.color = corOriginal;
                 aoSoltar.Invoke();
             }
