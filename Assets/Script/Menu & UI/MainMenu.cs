@@ -18,4 +18,14 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Creditos");
     }
+
+    public void Controles()
+    {
+        SceneManager.LoadScene("Controles");
+    }
+
+    public void Continuar()
+    {
+        SceneManager.LoadScene("Fase 1");
+    }
 }
