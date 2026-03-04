@@ -1,6 +1,4 @@
 using System;
-using NUnit.Framework;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -16,20 +14,18 @@ public class PlayerController : MonoBehaviour
     [Header("Visão e Mira")]
     public float viewRadius = 5f;
     [UnityEngine.Range(0, 360)] public float viewAngle = 90f;
-    public LayerMask targetLayer;
+    // targetLayer não é mais necessária aqui, mas vou deixar se você usar pra outra coisa
+    public LayerMask targetLayer; 
     public LayerMask obstacleLayer;
 
-    [Header("Status Quantico")]
-    public bool isSeeingQuantumObject = false;
+    // REMOVEMOS A VARIÁVEL GLOBAL "isSeeingQuantumObject" DAQUI!
 
     [Header("Suavização da Mira")]
-    public float rotationSpeed = 15f;    // O quão rápido ele vira o corpo
-    public float aimDeadzone = 0.1f;     // Distância mínima do mouse para ele tentar virar
+    public float rotationSpeed = 15f;    
+    public float aimDeadzone = 0.1f;     
 
     private Camera mainCam;
-
     private Vector2 mouseWorldPosition;
-
 
     void Start()
     {
@@ -37,21 +33,17 @@ public class PlayerController : MonoBehaviour
         mainCam = Camera.main;
     }
 
-    // Update is called once per frame
     void Update()
     {
         movementInput.x = Input.GetAxisRaw("Horizontal");
         movementInput.y = Input.GetAxisRaw("Vertical");
-
         movementInput.Normalize();
 
         Vector3 mouseScreenPosition = Input.mousePosition;
-
         mouseScreenPosition.z = Mathf.Abs(mainCam.transform.position.z); 
         mouseWorldPosition = mainCam.ScreenToWorldPoint(mouseScreenPosition);
-
         
-        FindVisibleTargets();
+        // Removemos o "FindVisibleTargets()" daqui, o player não procura mais sozinho.
     }
 
     void FixedUpdate()
@@ -63,55 +55,45 @@ public class PlayerController : MonoBehaviour
     void MovePlayer()
     {
         Vector2 targetVelocity = movementInput * maxSpeed;
-
         float currentAccelerationRate = (movementInput.magnitude > 0.01f) ? acceleration : deceleration;
-
         rb.linearVelocity = Vector2.MoveTowards(rb.linearVelocity, targetVelocity, currentAccelerationRate * Time.fixedDeltaTime);
     }
 
     void AimMouse()
     {
-        // 1. Descobre a direção e a distância do player para o mouse
         Vector2 lookDirection = mouseWorldPosition - (Vector2)transform.position;
         
-        // 2. A ZONA MORTA: O "sqrMagnitude" mede a distância (de forma mais leve pro PC).
-        // Se o mouse estiver muito perto do centro do player (menor que a deadzone), ele simplesmente ignora e não gira.
         if (lookDirection.sqrMagnitude > aimDeadzone)
         {
-            // Calcula o ângulo alvo que queremos chegar
             float targetAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f; 
-
-            // 3. A SUAVIZAÇÃO (LerpAngle): 
-            // Em vez de pular direto para o ângulo, nós arrastamos o ângulo atual do corpo até o ângulo alvo aos poucos.
-            // O LerpAngle é especial porque ele sabe que depois de 360 graus volta para o 0, evitando que o boneco dê giros ao contrário do nada.
             float smoothedAngle = Mathf.LerpAngle(rb.rotation, targetAngle, rotationSpeed * Time.fixedDeltaTime);
-
-            // Gira o corpo para esse novo ângulo suavizado
             rb.MoveRotation(smoothedAngle);
         }
     }
 
-    void FindVisibleTargets()
+    // --- A NOVA MÁGICA DE VISÃO REFINADA ---
+    // Agora o objeto pergunta diretamente pro player se ele está sendo visto!
+    public bool IsSeeing(Vector3 targetPosition)
     {
-        isSeeingQuantumObject = false; 
+        Vector3 dirToTarget = (targetPosition - transform.position).normalized;
+        float distanceToTarget = Vector3.Distance(transform.position, targetPosition);
 
-        Collider2D[] targetsInViewRadius = Physics2D.OverlapCircleAll(transform.position, viewRadius, targetLayer);
-
-        foreach (Collider2D target in targetsInViewRadius)
+        // 1. Está dentro do raio da lanterna?
+        if (distanceToTarget <= viewRadius)
         {
-            Vector3 dirToTarget = (target.transform.position - transform.position).normalized;
-
-            if (Vector3.Angle(transform.up, dirToTarget) < viewAngle / 2)
+            // 2. Está dentro do ângulo da lanterna?
+            if (Vector3.Angle(transform.up, dirToTarget) < viewAngle / 2f)
             {
-                float distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
-
+                // 3. O Raycast garante que não tem parede no caminho!
                 if (!Physics2D.Raycast(transform.position, dirToTarget, distanceToTarget, obstacleLayer))
                 {
-                    isSeeingQuantumObject = true;
+                    return true; // Bingo! O player tá olhando fixo pra essa coordenada!
                 }
             }
         }
+        return false; // Ninguém tá olhando...
     }
+    // ----------------------------------------
 
     private void OnDrawGizmosSelected()
     {

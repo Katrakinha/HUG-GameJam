@@ -14,7 +14,8 @@ public class PhotoManager : MonoBehaviour
 
     [Header("Interface (UI)")]
     public RawImage photoUIElement; 
-    public RenderTexture viewfinderTexture; // Arraste a sua Render Texture aqui
+    public RenderTexture viewfinderTexture;
+    public GameObject molduraPolaroid;
 
     [Header("Efeitos (Game Feel)")]
     public Image flashPanel;         // Arraste a sua TelaDeFlash aqui
@@ -34,6 +35,11 @@ public class PhotoManager : MonoBehaviour
     {
         // Garante que a câmera de preview comece desligada
         if (previewCamera != null) previewCamera.gameObject.SetActive(false);
+
+        if (molduraPolaroid != null) 
+        {
+            molduraPolaroid.SetActive(false); // Esconde a moldura
+        }
     }
 
     void Update()
@@ -149,6 +155,11 @@ public class PhotoManager : MonoBehaviour
         {
             StartCoroutine(FlashEffect());
         }
+
+        if (molduraPolaroid != null) 
+        {
+            molduraPolaroid.SetActive(true); // Aparece a moldura!
+        }
         
         Debug.Log("📸 Foto Tirada! Realidade congelada na Render Texture.");
     }
@@ -196,6 +207,11 @@ public class PhotoManager : MonoBehaviour
         else
         {
             StopAiming();
+        }
+
+        if (molduraPolaroid != null) 
+        {
+            molduraPolaroid.SetActive(false); // Some com a moldura!
         }
         
         Debug.Log("🗑️ Foto Descartada!");

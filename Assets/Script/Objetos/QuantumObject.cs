@@ -3,36 +3,37 @@ using UnityEngine;
 public class QuantumObject : MonoBehaviour
 {
     [Header("Conexão")]
-    public PlayerController player; // Referência ao nosso super script do player
+    public PlayerController player; 
     public PhotoManager photoManager;
 
     [Header("Configurações de Salto")]
-    public Transform[] possibleLocations; // Lista de lugares para onde ele pode ir
+    public Transform[] possibleLocations; 
     
-    // Essa é a memória de curto prazo do objeto. 
-    // Ele precisa lembrar se estava sendo olhado no milissegundo anterior.
     private bool wasObservedLastFrame = false; 
+    
+    // VARIÁVEL NOVA: Guarda a memória de onde ele está agora!
+    private int currentIndex = -1; 
 
     void Start()
     {
-        // Truque de Game Jam: Se você esquecer de arrastar o Player lá no Inspector, 
-        // o código procura e acha ele automaticamente na cena pra você não ter erros!
         if (player == null)
         {
             player = FindFirstObjectByType<PlayerController>(); 
-            if (photoManager == null) photoManager = FindFirstObjectByType<PhotoManager>();
+        }
+        if (photoManager == null)
+        {
+            photoManager = FindFirstObjectByType<PhotoManager>();
         }
     }
 
     void Update()
     {
-        // 1. O Player está olhando?
-        bool isSeenByPlayer = player.isSeeingQuantumObject;
+        // 1. A NOVA CHECAGEM REFINADA: O Objeto manda as suas próprias coordenadas pro player avaliar!
+        bool isSeenByPlayer = player.IsSeeing(transform.position);
         
-        // 2. Tem alguma FOTO olhando?
-        bool isSeenByPhoto = photoManager.IsPhotoSeeing(transform.position);
+        // 2. A foto está vendo? (Continua igual)
+        bool isSeenByPhoto = photoManager != null && photoManager.IsPhotoSeeing(transform.position);
 
-        // O objeto está sendo observado se QUALQUER UM DOS DOIS for verdadeiro
         bool isCurrentlyObserved = isSeenByPlayer || isSeenByPhoto;
 
         if (wasObservedLastFrame == true && isCurrentlyObserved == false)
@@ -45,41 +46,43 @@ public class QuantumObject : MonoBehaviour
 
     void JumpToRandomLocation()
     {
-        // Prevenção de erro: Se você não cadastrou nenhum ponto na Unity, ele não faz nada
-        if (possibleLocations.Length == 0)
+        if (possibleLocations.Length == 0) return;
+
+        // Se só tiver 1 ponto no mapa, não tem o que fazer, ele vai ter que pular pra lá mesmo.
+        if (possibleLocations.Length == 1)
         {
-            Debug.LogWarning("Faltou colocar os pontos de spawn no Objeto Quântico!");
+            currentIndex = 0;
+            transform.position = possibleLocations[0].position;
             return;
         }
 
-        // Sorteia um número de zero até a quantidade de pontos que você criou
+        // --- SISTEMA ANTI-REPETIÇÃO ---
         int randomIndex = Random.Range(0, possibleLocations.Length);
 
-        // Teleporta o objeto para a posição do ponto sorteado
+        // Enquanto o número sorteado for IGUAL ao lugar que ele já está, ele sorteia de novo!
+        while (randomIndex == currentIndex)
+        {
+            randomIndex = Random.Range(0, possibleLocations.Length);
+        }
+
+        // Atualiza a memória para o novo lugar e teleporta
+        currentIndex = randomIndex;
         transform.position = possibleLocations[randomIndex].position;
         
-        Debug.Log("BAM! O Objeto Quântico pulou para o ponto " + randomIndex);
+        Debug.Log("BAM! O Objeto Quântico pulou para um NOVO ponto: " + randomIndex);
     }
 
     private void OnDrawGizmos()
     {
-        // Se a lista não existir ou estiver vazia, a gente para por aqui para não dar erro
         if (possibleLocations == null || possibleLocations.Length == 0) return;
 
-        // Escolhemos uma cor "quântica" bem chamativa para os pontos
         Gizmos.color = Color.cyan; 
 
-        // Vamos olhar para CADA ponto dentro da nossa lista...
         foreach (Transform ponto in possibleLocations)
         {
-            // O "if" garante que a gente não tente desenhar um ponto que foi deletado sem querer
             if (ponto != null) 
             {
-                // Desenha uma bolinha de tamanho 0.5 na posição do ponto
                 Gizmos.DrawWireSphere(ponto.position, 0.5f); 
-                
-                // BÔNUS VISUAL: Desenha uma linha ligando o Objeto Quântico até o ponto de spawn!
-                // Isso ajuda muito a ver o "alcance" dos teletransportes
                 Gizmos.DrawLine(transform.position, ponto.position); 
             }
         }
