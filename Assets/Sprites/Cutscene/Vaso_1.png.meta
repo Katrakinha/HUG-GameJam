@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d72ffc0f49208514a8f27c5f12356faf
+guid: 3434eb17854937f41aa05c1d3afae706
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6571133450323232698
-    second: Cena_Celular_Rua_0
+      213: -4587135250326782182
+    second: Vaso_1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,11 +122,37 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cena_Celular_Rua_0
+      name: Vaso_1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ab70436ce0b513b50800000000000000
-      internalID: 6571133450323232698
+      spriteID: a1f79932bc83750c0800000000000000
+      internalID: -4587135250326782182
       vertices: []
       indices: 
       edges: []
@@ -161,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cena_Celular_Rua_0: 6571133450323232698
+      Vaso_1_0: -4587135250326782182
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
