@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class CutsceneManager : MonoBehaviour
 {
     public static Sprite[] paineisAtuais;
+    public static Color corDaSetaAtual = Color.white;
     public static int proximaCenaIndex;
 
     public Image telaDeImagem;
+    public Image setaAvancar;
     public float tempoDeFade = 1f;
 
     private int painelAtualIndex = 0;
@@ -16,6 +18,12 @@ public class CutsceneManager : MonoBehaviour
 
     void Start()
     {
+        if (setaAvancar != null)
+        {
+            setaAvancar.color = corDaSetaAtual;
+            setaAvancar.gameObject.SetActive(false);
+        }
+
         if (paineisAtuais != null && paineisAtuais.Length > 0 && telaDeImagem != null)
         {
             telaDeImagem.gameObject.SetActive(true);
@@ -43,8 +51,10 @@ public class CutsceneManager : MonoBehaviour
         }
     }
 
-    private void AvancarPainel()
+    public void AvancarPainel()
     {
+        if (emTransicao) return; 
+
         painelAtualIndex++;
 
         if (painelAtualIndex < paineisAtuais.Length)
@@ -53,6 +63,7 @@ public class CutsceneManager : MonoBehaviour
         }
         else
         {
+            if (setaAvancar != null) setaAvancar.gameObject.SetActive(false);
             StartCoroutine(FadeOutEPular());
         }
     }
@@ -60,9 +71,11 @@ public class CutsceneManager : MonoBehaviour
     private IEnumerator FadeIn()
     {
         emTransicao = true;
-        Color cor = telaDeImagem.color;
+        if (setaAvancar != null) setaAvancar.gameObject.SetActive(false);
 
+        Color cor = telaDeImagem.color;
         float tempo = 0f;
+        
         while (tempo < tempoDeFade)
         {
             tempo += Time.deltaTime;
@@ -74,6 +87,8 @@ public class CutsceneManager : MonoBehaviour
         cor.a = 1f;
         telaDeImagem.color = cor;
         emTransicao = false;
+
+        if (setaAvancar != null) setaAvancar.gameObject.SetActive(true);
     }
 
     private IEnumerator FadeOutEPular()
@@ -100,9 +115,10 @@ public class CutsceneManager : MonoBehaviour
         SceneManager.LoadScene(proximaCenaIndex);
     }
 
-    public static void PrepararEIniciarCutscene(Sprite[] paineis, int proximaCena)
+    public static void PrepararEIniciarCutscene(Sprite[] paineis, Color corSeta, int proximaCena)
     {
         paineisAtuais = paineis;
+        corDaSetaAtual = corSeta;
         proximaCenaIndex = proximaCena;
         SceneManager.LoadScene("SalaDeCutscene");
     }

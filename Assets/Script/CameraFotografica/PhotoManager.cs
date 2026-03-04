@@ -14,6 +14,7 @@ public class PhotoManager : MonoBehaviour
     
     [Header("Configuração da Cutscene")]
     public Sprite[] paineisDaCutscene;
+    public Color corDaSetaCutscene = Color.white;
 
     [Header("Interface (UI)")]
     public RawImage photoUIElement; 
@@ -114,7 +115,7 @@ public class PhotoManager : MonoBehaviour
             if (IsPhotoSeeing(keyObj.transform.position))
             {
                 int proximaFase = SceneManager.GetActiveScene().buildIndex + 1;
-                CutsceneManager.PrepararEIniciarCutscene(paineisDaCutscene, proximaFase);
+                CutsceneManager.PrepararEIniciarCutscene(paineisDaCutscene, corDaSetaCutscene, proximaFase);
             }
         }
 
