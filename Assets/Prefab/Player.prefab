@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1625307859014407919}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.99, z: 0}
+  m_LocalPosition: {x: 0, y: 0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 39.94
+  m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -71,9 +71,9 @@ MonoBehaviour:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 0
-  m_PointLightOuterAngle: 90
-  m_PointLightInnerRadius: 6.18
-  m_PointLightOuterRadius: 6.27
+  m_PointLightOuterAngle: 60
+  m_PointLightInnerRadius: 4.5
+  m_PointLightOuterRadius: 4.64
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -104,7 +104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6159170632047427804
 Transform:
   m_ObjectHideFlags: 0
@@ -171,8 +171,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.6509434, g: 0.08290317, b: 0.08290317, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 724b3b9c423f3b84188eca3e3be8d802, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -216,7 +216,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 1}
   m_Direction: 0
 --- !u!114 &5006469404205793911
 MonoBehaviour:
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3413ff36e7923394b9ee45f25338d68c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  maxSpeed: 6
+  maxSpeed: 3
   acceleration: 40
   deceleration: 40
   viewRadius: 5
@@ -241,7 +241,6 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 0
-  isSeeingQuantumObject: 0
   rotationSpeed: 15
   aimDeadzone: 0.1
 --- !u!50 &7410151961626881097
@@ -289,6 +288,7 @@ MonoBehaviour:
   viewfinderDistance: 3
   photoUIElement: {fileID: 0}
   viewfinderTexture: {fileID: 8400000, guid: b54f014d90f8a13498f4882a4c18d745, type: 2}
+  molduraPolaroid: {fileID: 0}
   flashPanel: {fileID: 0}
   flashDuration: 0.2
 --- !u!1 &5836238658758363773
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.08
+  m_Intensity: 2.08
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -363,8 +363,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0.88
-  m_PointLightOuterRadius: 1.27
+  m_PointLightInnerRadius: 0.38
+  m_PointLightOuterRadius: 1.06
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1

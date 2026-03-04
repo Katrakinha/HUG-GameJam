@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 92c2a59fc4159634ab1215c43a142157
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -257162974676919006
+    second: Level_1__Decora_es_0
+  - first:
+      213: -473140096673783080
+    second: Level_1__Decora_es_1
+  - first:
+      213: 2331398518634833626
+    second: Level_1__Decora_es_2
+  - first:
+      213: -6721951869715042199
+    second: Level_1__Decora_es_3
+  - first:
+      213: -9155743646627035641
+    second: Level_1__Decora_es_4
+  - first:
+      213: 4519458145184994691
+    second: Level_1__Decora_es_5
+  - first:
+      213: 5978641415444217975
+    second: Level_1__Decora_es_6
+  - first:
+      213: -4395411616500181864
+    second: Level_1__Decora_es_7
+  - first:
+      213: 1500938477072997368
+    second: Level_1__Decora_es_8
+  - first:
+      213: -2649404706565122821
+    second: Level_1__Decora_es_9
+  - first:
+      213: -6701361655120924735
+    second: Level_1__Decora_es_10
+  - first:
+      213: -8111162033737051242
+    second: Level_1__Decora_es_11
+  - first:
+      213: -6929992535331333344
+    second: Level_1__Decora_es_12
+  - first:
+      213: -2884863305496180332
+    second: Level_1__Decora_es_13
+  - first:
+      213: 6691742308071432921
+    second: Level_1__Decora_es_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Level_1__Decora_es_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 175
+        width: 18
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22ddff413af5e6cf0800000000000000
+      internalID: -257162974676919006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_1__Decora_es_1
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 223
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d2e3c0c6911f69f0800000000000000
+      internalID: -473140096673783080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_1__Decora_es_2
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 216
+        width: 34
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad6e915b99aca5020800000000000000
+      internalID: 2331398518634833626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_1__Decora_es_3
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 159
+        width: 42
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 960bc509364d6b2a0800000000000000
+      internalID: -6721951869715042199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_1__Decora_es_4
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 191
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7068140a9a340f080800000000000000
+      internalID: -9155743646627035641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_1__Decora_es_5
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 191
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3855ff8ec3758be30800000000000000
+      internalID: 4519458145184994691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_1__Decora_es_6
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 159
+        width: 34
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 770cdfee0b668f250800000000000000
+      internalID: 5978641415444217975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_1__Decora_es_7
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 135
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89491e43c6c5003c0800000000000000
+      internalID: -4395411616500181864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_1__Decora_es_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 111
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fbd6a3b79764d410800000000000000
+      internalID: 1500938477072997368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_1__Decora_es_9
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 119
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf410fed47c6b3bd0800000000000000
+      internalID: -2649404706565122821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_1__Decora_es_10
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 95
+        width: 34
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cfe71b741bfff2a0800000000000000
+      internalID: -6701361655120924735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_1__Decora_es_11
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 71
+        width: 42
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 693d777ea1d5f6f80800000000000000
+      internalID: -8111162033737051242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_1__Decora_es_12
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 71
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02b977b7188b3df90800000000000000
+      internalID: -6929992535331333344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_1__Decora_es_13
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 39
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 499475abb18e6f7d0800000000000000
+      internalID: -2884863305496180332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_1__Decora_es_14
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 15
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d2ec01cc28dddc50800000000000000
+      internalID: 6691742308071432921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Level_1__Decora_es_0: -257162974676919006
+      Level_1__Decora_es_1: -473140096673783080
+      Level_1__Decora_es_10: -6701361655120924735
+      Level_1__Decora_es_11: -8111162033737051242
+      Level_1__Decora_es_12: -6929992535331333344
+      Level_1__Decora_es_13: -2884863305496180332
+      Level_1__Decora_es_14: 6691742308071432921
+      Level_1__Decora_es_2: 2331398518634833626
+      Level_1__Decora_es_3: -6721951869715042199
+      Level_1__Decora_es_4: -9155743646627035641
+      Level_1__Decora_es_5: 4519458145184994691
+      Level_1__Decora_es_6: 5978641415444217975
+      Level_1__Decora_es_7: -4395411616500181864
+      Level_1__Decora_es_8: 1500938477072997368
+      Level_1__Decora_es_9: -2649404706565122821
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
