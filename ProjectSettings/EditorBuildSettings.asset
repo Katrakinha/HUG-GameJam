@@ -8,9 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 1b1096805a62eae4c85ed300c3e3b306
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
     path: Assets/Scenes/Fases/Fase 1.unity
     guid: 9f6697945a980ed47a3b1d6e50695ad3
@@ -35,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Controles.unity
     guid: 86a5aa1c157ff1344a6eaafd8a958182
+  - enabled: 1
+    path: Assets/Scenes/SalaDeCutscene.unity
+    guid: 66efd8b0db1ba0b4da6f9e7ae905fa07
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
