@@ -315,7 +315,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 663114037}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: TocarSomClique
+        m_MethodName: TocarSomHover
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -358,8 +358,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
   audioSourceMenu: {fileID: 2110267637}
-  somClique: {fileID: 8300000, guid: b039ab8535900584c8ccc04880a342a8, type: 3}
-  somHover: {fileID: 0}
+  somClique: {fileID: 0}
+  somHover: {fileID: 8300000, guid: b039ab8535900584c8ccc04880a342a8, type: 3}
 --- !u!114 &663114038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,7 +641,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 663114037}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: TocarSomClique
+        m_MethodName: TocarSomHover
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -847,7 +847,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 663114037}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: TocarSomClique
+        m_MethodName: TocarSomHover
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1282,7 +1282,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
