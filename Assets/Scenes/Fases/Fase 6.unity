@@ -1039,6 +1039,38 @@ PrefabInstance:
       propertyPath: molduraPolaroid
       value: 
       objectReference: {fileID: 1596381384}
+    - target: {fileID: 2787447731493423412, guid: 08c2ec427f8de8f4b94d205d66c2cb38, type: 3}
+      propertyPath: corDaSetaCutscene.b
+      value: 0.35686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 2787447731493423412, guid: 08c2ec427f8de8f4b94d205d66c2cb38, type: 3}
+      propertyPath: corDaSetaCutscene.g
+      value: 0.76470596
+      objectReference: {fileID: 0}
+    - target: {fileID: 2787447731493423412, guid: 08c2ec427f8de8f4b94d205d66c2cb38, type: 3}
+      propertyPath: corDaSetaCutscene.r
+      value: 0.90196085
+      objectReference: {fileID: 0}
+    - target: {fileID: 2787447731493423412, guid: 08c2ec427f8de8f4b94d205d66c2cb38, type: 3}
+      propertyPath: paineisDaCutscene.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2787447731493423412, guid: 08c2ec427f8de8f4b94d205d66c2cb38, type: 3}
+      propertyPath: 'paineisDaCutscene.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2502392848283807994, guid: 71bb7474af5b1d949b312df753deac5d, type: 3}
+    - target: {fileID: 2787447731493423412, guid: 08c2ec427f8de8f4b94d205d66c2cb38, type: 3}
+      propertyPath: 'paineisDaCutscene.Array.data[1]'
+      value: 
+      objectReference: {fileID: -5308332639324887724, guid: 8ae6135c8e59ee24cb973152e16160a6, type: 3}
+    - target: {fileID: 2787447731493423412, guid: 08c2ec427f8de8f4b94d205d66c2cb38, type: 3}
+      propertyPath: 'paineisDaCutscene.Array.data[2]'
+      value: 
+      objectReference: {fileID: -6653780238908576487, guid: edf6bb5fc82a0e4459bf1cd3a7d9e15e, type: 3}
+    - target: {fileID: 2787447731493423412, guid: 08c2ec427f8de8f4b94d205d66c2cb38, type: 3}
+      propertyPath: 'paineisDaCutscene.Array.data[3]'
+      value: 
+      objectReference: {fileID: -2961027287405617535, guid: 382fbeeb08722c84c8ed067a86dda7e3, type: 3}
     - target: {fileID: 4248861649748523638, guid: 08c2ec427f8de8f4b94d205d66c2cb38, type: 3}
       propertyPath: m_Name
       value: Player
