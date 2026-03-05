@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d72ffc0f49208514a8f27c5f12356faf
+guid: 1ea5a8be7ea7d864fa206b5a324e4fdf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6571133450323232698
-    second: Cena_Celular_Rua_0
+      213: 1173692496837613459
+    second: Cena_Rua_2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,37 +122,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cena_Celular_Rua_0
+      name: Cena_Rua_2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -167,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ab70436ce0b513b50800000000000000
-      internalID: 6571133450323232698
+      spriteID: 3971c8d7b1bc94010800000000000000
+      internalID: 1173692496837613459
       vertices: []
       indices: 
       edges: []
@@ -187,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cena_Celular_Rua_0: 6571133450323232698
+      Cena_Rua_2_0: 1173692496837613459
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
