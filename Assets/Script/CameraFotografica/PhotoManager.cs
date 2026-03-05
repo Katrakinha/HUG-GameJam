@@ -25,6 +25,10 @@ public class PhotoManager : MonoBehaviour
     public Image flashPanel;         
     public float flashDuration = 0.2f; 
 
+    [Header("Áudio")]
+    public AudioSource audioSource;
+    public AudioClip somFoto;
+
     public class PhotoData
     {
         public Vector3 position;
@@ -39,6 +43,8 @@ public class PhotoManager : MonoBehaviour
     void Start()
     {
         mainCam = Camera.main;
+
+        if (audioSource == null) audioSource = GetComponent<AudioSource>();
 
         if (previewCamera != null) previewCamera.gameObject.SetActive(false);
         if (molduraPolaroid != null) molduraPolaroid.SetActive(false);
@@ -120,6 +126,12 @@ public class PhotoManager : MonoBehaviour
         }
 
         if (photoUIElement != null) photoUIElement.texture = frozenImage;
+        
+        if (audioSource != null && somFoto != null)
+        {
+            audioSource.PlayOneShot(somFoto);
+        }
+
         if (flashPanel != null) StartCoroutine(FlashEffect());
         if (molduraPolaroid != null) molduraPolaroid.SetActive(true);
     }

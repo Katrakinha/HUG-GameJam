@@ -16,10 +16,16 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 15f;    
     public float aimDeadzone = 0.1f;     
 
+    [Header("Áudio")]
+    public AudioSource audioSourcePassos;
+    public AudioClip somPasso;
+    public float tempoEntrePassos = 0.4f;
+
     private Rigidbody2D rb;
     private Vector2 movementInput;
     private Camera mainCam;
     private Vector2 mouseWorldPosition;
+    private float contadorPassos;
 
     void Start()
     {
@@ -36,6 +42,8 @@ public class PlayerController : MonoBehaviour
         Vector3 mouseScreenPosition = Input.mousePosition;
         mouseScreenPosition.z = Mathf.Abs(mainCam.transform.position.z); 
         mouseWorldPosition = mainCam.ScreenToWorldPoint(mouseScreenPosition);
+        
+        TocarSomDePassos();
     }
 
     void FixedUpdate()
@@ -60,6 +68,31 @@ public class PlayerController : MonoBehaviour
             float targetAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f; 
             float smoothedAngle = Mathf.LerpAngle(rb.rotation, targetAngle, rotationSpeed * Time.fixedDeltaTime);
             rb.MoveRotation(smoothedAngle);
+        }
+    }
+
+    void TocarSomDePassos()
+    {
+        if (movementInput.sqrMagnitude > 0.01f)
+        {
+            contadorPassos += Time.deltaTime;
+            if (contadorPassos >= tempoEntrePassos)
+            {
+                if (audioSourcePassos != null && somPasso != null)
+                {
+                    audioSourcePassos.pitch = Random.Range(0.9f, 1.1f);
+                    audioSourcePassos.PlayOneShot(somPasso);
+                }
+                contadorPassos = 0f;
+            }
+        }
+        else
+        {
+            contadorPassos = tempoEntrePassos; 
+            if (audioSourcePassos != null) 
+            {
+                audioSourcePassos.Stop(); 
+            }
         }
     }
 
