@@ -252,7 +252,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Brunno Rossi\n\"TynniBru\"\r\nProducer / Game Designer\n\r\nGabriel Kanthack
     \r\n \"Katraka\"\nProgramador\r\n\r\nGabriela Laurenti\r\n\"Bibs\"\nArtista UI/UX\n\r\nRuan
-    Narvaes\r\n\"Neno\"\nArtista Geral\r\n\nKaua  Alvez\r\nRoteirista\r\n\r\n\r\n"
+    Narvaes\r\n\"Neno\"\nArtista Geral\r\n\nKau\xE3  Alves\r\nRoteirista\r\n\r\n\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c83671aafc1ea984699949d2a744c2e6, type: 2}
   m_sharedMaterial: {fileID: -7032560080523640519, guid: c83671aafc1ea984699949d2a744c2e6, type: 2}
